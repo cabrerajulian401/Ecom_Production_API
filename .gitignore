@@ -1,1 +1,10 @@
+# Environment
 .env
+.env.local
+
+# Compiled binary
+econ_api
+*.exe
+
+# OS files
+.DS_Store
