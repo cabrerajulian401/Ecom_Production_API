@@ -11,7 +11,9 @@ This is a production-grade ecommerce REST API demonstrating modern Go backend de
 - **Go 1.25** - Backend language
 - **Chi** - Lightweight HTTP router
 - **PostgreSQL 16** - Database
+- **pgx v5** - High-performance PostgreSQL driver for Go
 - **sqlc** - Type-safe SQL code generation
+- **Goose** - Database migration tool
 - **Docker** - Containerized PostgreSQL
 
 ## Project Structure
