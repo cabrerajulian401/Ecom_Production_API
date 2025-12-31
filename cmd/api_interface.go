@@ -6,6 +6,7 @@ import (
 	"time"
 
 	repo "github.com/cabrerajulian401/ecom/internal/adapters/postgresql/sqlc"
+	"github.com/cabrerajulian401/ecom/internal/orders"
 	"github.com/cabrerajulian401/ecom/internal/products"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
@@ -43,6 +44,9 @@ func (app *application) mount() http.Handler {
 	productHandler := products.NewHandler(productService)
 	r.Get("/products", productHandler.ListProducts)
 
+	orderService := orders.NewService(repo.New(app.db), app.db)
+	ordersHandler := orders.NewHandler(orderService)
+	r.Post("/order", ordersHandler.PlaceOrder)
 	/* the handler register recives an instance of the interface*/
 	return r
 }
